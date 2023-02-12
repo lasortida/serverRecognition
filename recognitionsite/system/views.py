@@ -17,7 +17,7 @@ class ResultAPIView(APIView):
 
     def post(self, request):
         form = UploadFileForm(request.POST, request.FILES)
-        handle(request.FILES['file'])
+        handle(request.FILES['image'])
         image = cv2.imread("B:\server\\recognitionsite\system\scripts\photo.jpg")
         naming, cost, numbers = self.returnResult(image)
         return Response({"naming": naming,
