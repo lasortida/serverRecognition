@@ -12,7 +12,7 @@ class RecSystem:
     def getResults(self, image):
         h, w, d = image.shape
         image = image[int((h / 2) - (w / 2)):int((h / 2) + (w / 2)), :]
-        image = cv2.resize(image, (512, 512))
+        image = cv2.resize(image, (450, 450))
         images = []
         images.append(image)
         results = self.reader.readtext(images[0], batch_size=512, add_margin=0.05, blocklist="!@#$^&*()[]{}<>/?';:|~`+=abcdefghijklmnopqrstuvwxyz")
